@@ -3,7 +3,7 @@ El objetivo de este proyecto es poder realizar una biblioteca digital de musica,
 
 MODIFICACIÖNES RECIENTES (21-Mayo)
 - Diagrama UML actualizado, con la implementación correcta de los temas faltanntes (Herencia y asociación)
-- Implementación de codigo con las subcompetencias solicitadas
+- Implementación de codigo con las subcompetencias solicitadas (El codigo no tiene intención de funcionar así, es simplemente un ejemplo de como se vería cuando el usuario pida que se muestre la canción que solicitó)
 
 
 ![Diagrama UML del sistema](https://github.com/marianafriass/ProyectoIntegrador/blob/main/Integrador2.jpg?raw=true)
