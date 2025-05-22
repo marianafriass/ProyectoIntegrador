@@ -5,9 +5,9 @@ using namespace std;
 Album::Album()
     : ElementoMusical(), nombreAlbum(""), numCanciones(0), artista(nullptr) {}
 
-Album::Album(string titulo, int duracion, int anio,
+Album::Album(string titulo, int duracion, int año,
              string nombreAlbum, int numCanciones)
-    : ElementoMusical(titulo, duracion, anio),
+    : ElementoMusical(titulo, duracion, año),
       nombreAlbum(nombreAlbum),
       numCanciones(numCanciones),
       artista(nullptr) {}
