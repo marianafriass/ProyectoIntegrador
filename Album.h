@@ -12,7 +12,7 @@ private:
 
 public:
     Album();
-    Album(string titulo, int duracion, int anio, string nombreAlbum, int numCanciones);
+    Album(string titulo, int duracion, int año, string nombreAlbum, int numCanciones);
     
     // Sobrescritura 
     void reproducir() override;
