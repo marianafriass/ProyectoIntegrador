@@ -8,9 +8,9 @@ Cancion::Cancion()
       nombreArtista(""),
       artista(nullptr) {}
 
-Cancion::Cancion(string titulo, int duracion, int anio,
+Cancion::Cancion(string titulo, int duracion, int año,
                  string genero, string nombreArtista)
-    : ElementoMusical(titulo, duracion, anio),
+    : ElementoMusical(titulo, duracion, año),
       genero(genero),
       nombreArtista(nombreArtista),
       artista(nullptr) {}
