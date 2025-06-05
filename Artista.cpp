@@ -1,28 +1,27 @@
 #include "Artista.h"
 
-Artista::Artista()
-    : nombre(""), genero("") {}
+Artista::Artista() : nombre(""), genero("") {}
 
-Artista::Artista(string nombre, string genero)
+Artista::Artista(string nombre, string genero) 
     : nombre(nombre), genero(genero) {}
 
-string Artista::getNombre() const {
-    return nombre;
+bool Artista::operator==(const Artista& otro) const {
+    return nombre == otro.nombre && genero == otro.genero;
 }
 
-void Artista::setNombre(string nombre) {
-    this->nombre = nombre;
+bool Artista::operator!=(const Artista& otro) const {
+    return !(*this == otro);
 }
 
-string Artista::getGenero() const {
-    return genero;
+ostream& operator<<(ostream& os, const Artista& artista) {
+    os << artista.mostrarInfo();
+    return os;
 }
 
-void Artista::setGenero(string genero) {
-    this->genero = genero;
-}
-
+string Artista::getNombre() const { return nombre; }
+void Artista::setNombre(string nombre) { this->nombre = nombre; }
+string Artista::getGenero() const { return genero; }
+void Artista::setGenero(string genero) { this->genero = genero; }
 string Artista::mostrarInfo() const {
-    return "Artista: " + nombre +
-           ", Género: " + genero;
+    return "Artista: " + nombre + ", Género: " + genero;
 }
