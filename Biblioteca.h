@@ -4,22 +4,24 @@
 #include <string>
 #include "ElementoMusical.h"
 
-using namespace std;
-
 class Biblioteca {
 private:
-    string nombre;
-    string ubicacion;
-    ElementoMusical* elemento;
+    std::string nombre;
+    ElementoMusical** elementos; 
+    int tamanio; 
+    int capacidad; 
+
+    void redimensionar(int nuevaCapacidad); 
 
 public:
     Biblioteca();
-    Biblioteca(string nombre, string ubicacion);
-
-    ElementoMusical* getElementoMusical() const;
-    void setElementoMusical(ElementoMusical* elemento);
-
+    Biblioteca(std::string nombre);
+    ~Biblioteca();
+    
+    void agregarElemento(ElementoMusical* elemento);
+    void eliminarElemento(const std::string& titulo);
     void mostrarCatalogo() const;
+    ElementoMusical** buscarPorArtista(const std::string& nombreArtista, int& resultados) const;
 };
 
-#endif // BIBLIOTECA_H
+#endif
