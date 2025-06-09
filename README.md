@@ -7,8 +7,6 @@ El programa permite al usuario:
 3. Buscar canciones y álbumes por nombre de artista.
 4. Mostrar el catálogo completo del contenido musical disponible.
 
-Para poder compilar este programa lo único que se necesita es tener instalado algún compilador de c++ (En caso de que tu compilador sea Clion se deberá incluir el archivo de CMakeListstxt, de lo contrario no usarlo)
-
 MODIFICACIÖNES RECIENTES 
 - (21Mayo) Diagrama UML actualizado, con la implementación correcta de los temas faltanntes (Herencia y asociación)
 - (21Mayo) Implementación de codigo con las subcompetencias solicitadas (El codigo no tiene intención de funcionar así, es simplemente un ejemplo de como se vería cuando el usuario pida que se muestre la canción que solicitó)
