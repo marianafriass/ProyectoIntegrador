@@ -15,7 +15,7 @@ public:
     ElementoMusical(string titulo, int duracion, int anio);
     virtual ~ElementoMusical() = default;
 
-    // Métodos virtuales puros
+    // Métodos virtuales
     virtual void reproducir() = 0;
     virtual string obtenerInfo() = 0;
 
