@@ -14,7 +14,7 @@ public:
     Album();
     Album(string titulo, int duracion, int anio, string nombreAlbum, int numCanciones);
     
-    // Métodos virtuales
+    // Sobrescritura de métodos virtuales
     void reproducir() override;
     string obtenerInfo() override;
 
