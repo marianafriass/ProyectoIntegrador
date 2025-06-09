@@ -16,9 +16,15 @@ Album::Album(string titulo, int duracion, int anio, string nombreAlbum, int numC
                  " (" + to_string(numCanciones) + " canciones)";
       }
 
-string Album::getNombreAlbum() const { return nombreAlbum; }
-void Album::setNombreAlbum(string nombreAlbum) { this->nombreAlbum = nombreAlbum; }
-int Album::getTotalCanciones() const { return numCanciones; }
-void Album::setTotalCanciones(int numCanciones) { this->numCanciones = numCanciones; }
-Artista* Album::getArtista() const { return artista; }
-void Album::setArtista(Artista* artista) { this->artista = artista; }
+string Album::getNombreAlbum() const {
+    return nombreAlbum; }
+void Album::setNombreAlbum(string nombreAlbum) {
+    this->nombreAlbum = nombreAlbum; }
+int Album::getTotalCanciones() const {
+    return numCanciones; }
+void Album::setTotalCanciones(int numCanciones) {
+    this->numCanciones = numCanciones; }
+Artista* Album::getArtista() const {
+    return artista; }
+void Album::setArtista(Artista* artista) {
+    this->artista = artista; }
