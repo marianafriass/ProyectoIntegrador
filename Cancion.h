@@ -12,8 +12,9 @@ private:
 
 public:
     Cancion();
-    Cancion(std::string titulo,int duracion, int anio, std::string genero, std::string nombreArtista);
+    Cancion(std::string titulo, int duracion, int anio, std::string genero, std::string nombreArtista);
     
+    // Sobrescritura de métodos virtuales
     void reproducir() override;
     std::string obtenerInfo() override;
 
