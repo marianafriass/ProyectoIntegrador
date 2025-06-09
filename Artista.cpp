@@ -13,14 +13,14 @@ bool Artista::operator!=(const Artista& otro) const {
     return !(*this == otro);
 }
 
-ostream& operator<<(ostream& os, const Artista& artista) {
-    os << artista.mostrarInfo();
-    return os;
-}
-
+// Método mostrarInfo
 string Artista::getNombre() const { return nombre; }
-void Artista::setNombre(string nombre) { this->nombre = nombre; }
-string Artista::getGenero() const { return genero; }
+void Artista::setNombre(string nombre) {
+    this->nombre = nombre;
+}
+string Artista::getGenero() const {
+    return genero;
+}
 void Artista::setGenero(string genero) { this->genero = genero; }
 string Artista::mostrarInfo() const {
     return "Artista: " + nombre + ", Género: " + genero;
