@@ -7,15 +7,13 @@
 class Biblioteca {
 private:
     std::string nombre;
-    ElementoMusical** elementos; 
-    int tamanio; 
-    int capacidad; 
-
-    void redimensionar(int nuevaCapacidad); 
+    ElementoMusical** elementos; // Arreglo 
+    int tamanio; // Número de elementos en el arreglo
+    int capacidad; // Capacidad total del arreglo
 
 public:
-    Biblioteca();
-    Biblioteca(std::string nombre);
+    Biblioteca(); 
+    Biblioteca(std::string nombre); 
     ~Biblioteca();
     
     void agregarElemento(ElementoMusical* elemento);
