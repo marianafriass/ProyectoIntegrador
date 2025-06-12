@@ -1,28 +1,20 @@
 #include "Cancion.h"
 #include <iostream>
-
-Cancion::Cancion() : ElementoMusical(), genero(""), nombreArtista(""), artista(nullptr) {}
+using namespace std;
 
 Cancion::Cancion(string titulo, int duracion, int anio, string genero, string nombreArtista)
-    : ElementoMusical(titulo, duracion, anio), genero(genero), nombreArtista(nombreArtista), artista(nullptr) {}
+    : ElementoMusical(titulo, duracion, anio) {
+    this->genero = genero;
+    this->nombreArtista = nombreArtista;}
 
-      void Cancion::reproducir() {
-          cout << "Reproduciendo canción: " << getTitulo() << " - " << nombreArtista << endl;
-      }
+void Cancion::reproducir() {cout << "Reproduciendo canción: " << titulo << endl;}
 
-      string Cancion::obtenerInfo() {
-          return "Canción: " + getTitulo() + " (" + genero + ") por " + nombreArtista;
-      }
+string Cancion::obtenerInfo() {return "Canción: " + titulo + ", Artista: " + nombreArtista + ", Género: " + genero;}
+string Cancion::getGenero() {return genero;}
+string Cancion::getNombreArtista() {return nombreArtista;}
 
-string Cancion::getGenero() const {
-    return genero; }
-void Cancion::setGenero(string genero) {
-    this->genero = genero; }
-string Cancion::getNombreArtista() const {
-    return nombreArtista; }
-void Cancion::setNombreArtista(string nombreArtista) {
-    this->nombreArtista = nombreArtista; }
-Artista* Cancion::getArtista() const {
-    return artista; }
-void Cancion::setArtista(Artista* artista) {
-    this->artista = artista; }
+Artista* Cancion::getArtista() {return artista;}
+
+void Cancion::setGenero(string genero) {this->genero = genero;}
+void Cancion::setNombreArtista(string nombreArtista) {this->nombreArtista = nombreArtista;}
+void Cancion::setArtista(Artista* artista) {this->artista = artista;}
