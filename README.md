@@ -8,4 +8,4 @@ El programa permite al usuario:
 
 Comando para compilar el programa(Poner directamente en la consola una vez después de descargar el código): g++ main.cpp Album.cpp Cancion.cpp Artista.cpp Biblioteca.cpp ElementoMusical.cpp -o BibliotecaMusical
 
-![Diagrama UML del sistema](https://github.com/marianafriass/ProyectoIntegrador/blob/main/Integrador.drawio.png?raw=true)
+![Diagrama UML del sistema](https://github.com/marianafriass/ProyectoIntegrador/blob/main/UML.png?raw=true)
