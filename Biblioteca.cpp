@@ -1,71 +1,50 @@
 #include "Biblioteca.h"
-#include "Cancion.h"
-#include "Album.h"
 #include <iostream>
-#include <cstring>
 
-Biblioteca::Biblioteca() : nombre("Mi Biblioteca"), elementos(nullptr), tamanio(0), capacidad(100) {
-    elementos = new ElementoMusical*[capacidad]; 
-}
+using namespace std;
 
-Biblioteca::Biblioteca(std::string nombre) : nombre(nombre), elementos(nullptr), tamanio(0), capacidad(100) {
-    elementos = new ElementoMusical*[capacidad]; 
-}
-
-Biblioteca::~Biblioteca() {
-    for (int i = 0; i < tamanio; ++i) {
-        delete elementos[i]; 
-    }
-    delete[] elementos;
-}
-
-// Implementación de agregarElemento
-void Biblioteca::agregarElemento(ElementoMusical* elemento) {
-    if (tamanio >= capacidad) {
-        throw std::runtime_error("Capacidad máxima de la biblioteca alcanzada."); // Marca error si excede el limite
-    }
-    elementos[tamanio++] = elemento; // Agrega el elemento al arreglo
-}
-
-// Implementación de eliminarElemento
-void Biblioteca::eliminarElemento(const std::string& titulo) {
-    for (int i = 0; i < tamanio; ++i) {
-        if (elementos[i]->getTitulo() == titulo) {
-            delete elementos[i]; // Elimina el elemento
-            for (int j = i; j < tamanio - 1; ++j) {
-                elementos[j] = elementos[j + 1]; 
-            }
-            --tamanio;
-            break;
-        }
+Biblioteca::Biblioteca() {
+    cantidadAlbumes = 0;
+    for (int i = 0; i < MAX_ALBUMES; i++) {
+        albumes[i] = nullptr;
     }
 }
 
-// Implementación de mostrarCatalogo
-void Biblioteca::mostrarCatalogo() const {
-    std::cout << "Catálogo de " << nombre << std::endl;
-    std::cout << "--------------------------------" << std::endl;
-    for (int i = 0; i < tamanio; ++i) {
-        if (elementos[i]) { // Validar que no sea nullptr
-            std::cout << elementos[i]->obtenerInfo() << std::endl;
-        }
+bool Biblioteca::agregarAlbum(Album* album) {
+    if (cantidadAlbumes < MAX_ALBUMES) {
+        albumes[cantidadAlbumes++] = album;
+        return true;
     }
+    return false;
 }
 
-// Implementación de buscarPorArtista
-ElementoMusical** Biblioteca::buscarPorArtista(const std::string& nombreArtista, int& resultados) const {
-    resultados = 0;
-    ElementoMusical** encontrados = new ElementoMusical*[tamanio];
-    for (int i = 0; i < tamanio; ++i) {
-        if (Cancion* cancion = dynamic_cast<Cancion*>(elementos[i])) {
-            if (cancion->getNombreArtista() == nombreArtista) {
-                encontrados[resultados++] = cancion;
-            }
-        } else if (Album* album = dynamic_cast<Album*>(elementos[i])) {
-            if (album->getArtista() && album->getArtista()->getNombre() == nombreArtista) {
-                encontrados[resultados++] = album;
+void Biblioteca::mostrarTodasLasCanciones() {
+    cout << "\n----Canciones de la biblioteca ordenadas por artista----\n\n";
+
+    for (int i = 0; i < cantidadAlbumes; i++) {
+        if (albumes[i] != nullptr) {
+            cout << "Álbum: " << albumes[i]->getNombre() << " (" << albumes[i]->getAnio() << ")\n";
+            for (int j = 0; j < albumes[i]->getCantidadCanciones(); j++) {
+                Cancion* cancion = albumes[i]->getCanciones()[j];
+                if (cancion != nullptr) {
+                    cout << " - " << cancion->getTitulo() << endl;}
             }
         }
     }
-    return encontrados;
+}
+
+void Biblioteca::mostrarTodasCanciones() {
+    cout << "\n----Todas las canciones disponibles de la biblioteca-----\n\n";
+
+    for (int i = 0; i < cantidadAlbumes; i++) {
+        if (albumes[i] != nullptr) {
+            Cancion** canciones = albumes[i]->getCanciones();
+            int cantidadCanciones = albumes[i]->getCantidadCanciones();
+
+            for (int j = 0; j < cantidadCanciones; j++) {
+                if (canciones[j] != nullptr) {
+                    cout << " - " << canciones[j]->obtenerInfo() << endl;}
+            }
+        }
+    }
 }
