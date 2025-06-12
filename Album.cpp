@@ -1,30 +1,31 @@
 #include "Album.h"
 #include <iostream>
+using namespace std;
 
-Album::Album() : ElementoMusical(), nombreAlbum(""), numCanciones(0), artista(nullptr) {}
+Album::Album(string nombre, int anio) {
+    this->nombre = nombre;
+    this->anio = anio;
+    cantidadCanciones = 0;
+}
 
-Album::Album(string titulo, int duracion, int anio, string nombreAlbum, int numCanciones)
-    : ElementoMusical(titulo, duracion, anio), nombreAlbum(nombreAlbum), 
-      numCanciones(numCanciones), artista(nullptr) {}
+string Album::getNombre() {return nombre;}
+int Album::getAnio() {return anio;}
+void Album::setNombre(string nombre) {this->nombre = nombre;}
+void Album::setAnio(int anio) {this->anio = anio;}
 
-      void Album::reproducir() {
-          cout << "Reproduciendo álbum: " << getTitulo() << " (" << numCanciones << " canciones)" << endl;
-      }
+bool Album::agregarCancion(Cancion* cancion) {
+    if (cantidadCanciones < MAX_CANCIONES) {
+        canciones[cantidadCanciones++] = cancion;
+        return true;
+    }
+    return false;
+}
 
-      string Album::obtenerInfo() {
-          return "Álbum: " + getTitulo() + " - " + nombreAlbum +
-                 " (" + to_string(numCanciones) + " canciones)";
-      }
+void Album::mostrarCanciones() {
+    for (int i = 0; i < cantidadCanciones; i++) {
+        cout << " - " << canciones[i]->obtenerInfo() << endl;
+    }
+}
 
-string Album::getNombreAlbum() const {
-    return nombreAlbum; }
-void Album::setNombreAlbum(string nombreAlbum) {
-    this->nombreAlbum = nombreAlbum; }
-int Album::getTotalCanciones() const {
-    return numCanciones; }
-void Album::setTotalCanciones(int numCanciones) {
-    this->numCanciones = numCanciones; }
-Artista* Album::getArtista() const {
-    return artista; }
-void Album::setArtista(Artista* artista) {
-    this->artista = artista; }
+Cancion** Album::getCanciones() {return canciones;}
+int Album::getCantidadCanciones() {return cantidadCanciones;}
