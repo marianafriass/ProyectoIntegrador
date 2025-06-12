@@ -6,6 +6,9 @@ El programa permite al usuario:
 2. Asociar cada canción o álbum con un artista.
 3. Mostrar el catálogo completo del contenido musical disponible.
 
-Comando para compilar el programa(Poner directamente en la consola una vez después de descargar el código): g++ main.cpp Album.cpp Cancion.cpp Artista.cpp Biblioteca.cpp ElementoMusical.cpp -o BibliotecaMusical
+Comando para compilar el programa(Poner directamente en la consola una vez después de descargar el código): g++ main.cpp Album.cpp Cancion.cpp Artista.cpp Biblioteca.cpp ElementoMusical.cpp -o programa
+
+Correr en linux: "/a.out"
+Correr en windows: "a.exe"
 
 ![Diagrama UML del sistema](uml.drawio.png)
