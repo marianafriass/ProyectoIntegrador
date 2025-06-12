@@ -11,21 +11,18 @@ protected:
     int anio;
 
 public:
-    ElementoMusical();
     ElementoMusical(string titulo, int duracion, int anio);
-    virtual ~ElementoMusical() = default;
 
-    // Métodos virtuales
+    string getTitulo();
+    int getDuracion();
+    int getAnio();
+
+    void setTitulo(string titulo);
+    void setDuracion(int duracion);
+    void setAnio(int anio);
+
     virtual void reproducir() = 0;
     virtual string obtenerInfo() = 0;
-
-    // Getters y setters
-    string getTitulo() const;
-    void setTitulo(string titulo);
-    int getDuracion() const;
-    void setDuracion(int duracion);
-    int getAnio() const;
-    void setAnio(int anio);
 };
 
 #endif
