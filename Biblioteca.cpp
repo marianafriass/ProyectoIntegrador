@@ -4,12 +4,12 @@
 using namespace std;
 
 Biblioteca::Biblioteca() {
-    cantidadAlbumes = 0;
+    cantidadAlbumes = 0; //iniciamos la cantidad de albumes en cero
     for (int i = 0; i < MAX_ALBUMES; i++) {
         albumes[i] = nullptr;
     }
 }
-
+// primero vamos a verificar si aun existe espacio para agregar algun otro album, agregamos el album y aumentamos el contador
 bool Biblioteca::agregarAlbum(Album* album) {
     if (cantidadAlbumes < MAX_ALBUMES) {
         albumes[cantidadAlbumes++] = album;
@@ -17,7 +17,7 @@ bool Biblioteca::agregarAlbum(Album* album) {
     }
     return false;
 }
-
+// para que el programa pudiera tener un menu en base a lo que ya se tenía de codigo se implementaron dos opciones, mostrar artista y todas sus canciones
 void Biblioteca::mostrarTodasLasCanciones() {
     cout << "\n----Canciones de la biblioteca ordenadas por artista----\n\n";
 
@@ -32,7 +32,7 @@ void Biblioteca::mostrarTodasLasCanciones() {
         }
     }
 }
-
+// o mostrar todas las canciones junto a su informacion de cancion
 void Biblioteca::mostrarTodasCanciones() {
     cout << "\n----Todas las canciones disponibles de la biblioteca-----\n\n";
 
