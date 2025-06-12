@@ -1,25 +1,21 @@
 #ifndef BIBLIOTECA_H
 #define BIBLIOTECA_H
 
-#include <string>
-#include "ElementoMusical.h"
+#include "Album.h"
+
+const int MAX_ALBUMES = 10;
 
 class Biblioteca {
 private:
-    std::string nombre;
-    ElementoMusical** elementos; // Arreglo 
-    int tamanio; // Número de elementos en el arreglo
-    int capacidad; // Capacidad total del arreglo
+    Album* albumes[MAX_ALBUMES];
+    int cantidadAlbumes;
 
 public:
-    Biblioteca(); 
-    Biblioteca(std::string nombre); 
-    ~Biblioteca();
-    
-    void agregarElemento(ElementoMusical* elemento);
-    void eliminarElemento(const std::string& titulo);
-    void mostrarCatalogo() const;
-    ElementoMusical** buscarPorArtista(const std::string& nombreArtista, int& resultados) const;
+    Biblioteca();
+
+    bool agregarAlbum(Album* album);
+    void mostrarTodasLasCanciones();
+    void mostrarTodasCanciones();
 };
 
 #endif
