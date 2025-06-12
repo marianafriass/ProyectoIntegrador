@@ -3,7 +3,7 @@
 #include <string>
 #include "Cancion.h"
 
-const int MAX_CANCIONES = 10;
+const int MAX_CANCIONES = 10; //definimos el numero max de canciones
 
 class Album {
 private:
@@ -14,10 +14,13 @@ private:
 
 public:
     Album(string nombre = "", int anio = 0);
+    // getters
     string getNombre();
     int getAnio();
+    // setters
     void setNombre(string nombre);
     void setAnio(int anio);
+    //agregar cancion al album
     bool agregarCancion(Cancion* cancion);
     void mostrarCanciones();
     Cancion** getCanciones();
