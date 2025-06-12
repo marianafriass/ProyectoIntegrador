@@ -61,7 +61,7 @@ int main() {
     cancion10->setArtista(lorde);
     album3->agregarCancion(cancion10);
 
-    // Agregar álbumes a la biblioteca
+    // Agregamos los albumes a la biblioteca
     miBiblioteca.agregarAlbum(album1);
     miBiblioteca.agregarAlbum(album2);
     miBiblioteca.agregarAlbum(album3);
