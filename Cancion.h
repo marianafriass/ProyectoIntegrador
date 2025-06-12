@@ -12,14 +12,14 @@ private:
 
 public:
     Cancion(string titulo, int duracion, int anio, string genero, string nombreArtista);
-
+    //sobreescritura
     void reproducir();
     string obtenerInfo();
-
+    // getters
     string getGenero();
     string getNombreArtista();
     Artista* getArtista();
-
+    // setters
     void setGenero(string genero);
     void setNombreArtista(string nombreArtista);
     void setArtista(Artista* artista);
