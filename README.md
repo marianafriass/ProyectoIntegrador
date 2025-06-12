@@ -1,5 +1,5 @@
 # Biblioteca Digital Musical
-El objetivo de este proyecto es poder realizar una biblioteca digital musical, es decir, crear un programa donde simule ser una aplicación de musica así como Spotify. Este proyecto esta diseñado con el objetivo de que el usuario sea capaz de organizar, buscar y gestionar las canciones de la biblioteca, lo que le da completa libertad de elegir y agregar solo las canciones deseadas.
+El objetivo de este proyecto es poder realizar una biblioteca digital musical, es decir, crear un programa donde simule ser una aplicación de musica así como Spotify en la que el usuario puede visualizar y explorar una biblioteca de canciones previamente cargadas. 
 
 El programa permite al usuario:
 1. Buscar canciones y álbumes de biblioteca.
