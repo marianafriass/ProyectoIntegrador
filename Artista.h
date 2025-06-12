@@ -10,8 +10,8 @@ private:
 
 public:
     Artista(string nombre = "");
-    string getNombre();
-    void setNombre(string nombre);
+    string getNombre(); //getter
+    void setNombre(string nombre); //setter
 };
 
 #endif
