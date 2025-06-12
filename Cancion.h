@@ -6,29 +6,22 @@
 
 class Cancion : public ElementoMusical {
 private:
-    std::string genero;
-    std::string nombreArtista;
+    string genero;
+    string nombreArtista;
     Artista* artista;
 
 public:
-    Cancion();
-    Cancion(std::string titulo, int duracion, int anio, std::string genero, std::string nombreArtista);
-    
-    // Sobrescritura de métodos virtuales
-    void reproducir() override;
-    std::string obtenerInfo() override;
+    Cancion(string titulo, int duracion, int anio, string genero, string nombreArtista);
 
-    // Sobrecarga de operador
-    bool operator<(const Cancion& otra) const {
-        return duracion < otra.duracion;
-    }
+    void reproducir();
+    string obtenerInfo();
 
-    // Getters y setters
-    std::string getGenero() const;
-    void setGenero(std::string genero);
-    std::string getNombreArtista() const;
-    void setNombreArtista(std::string nombreArtista);
-    Artista* getArtista() const;
+    string getGenero();
+    string getNombreArtista();
+    Artista* getArtista();
+
+    void setGenero(string genero);
+    void setNombreArtista(string nombreArtista);
     void setArtista(Artista* artista);
 };
 
